@@ -215,7 +215,7 @@ def lowhang():
                 def csvinje():
                     top=Toplevel(root)
                     top.geometry("750x750")
-                    top.title("How to exploit Hyperlink execution ")
+                    top.title("How to exploit csv injection ")
                     a=Label(top,text='''Step to reproduce :-
                 When ever we work on the website and the data get
                 saved in the web site as excel file so we will try
@@ -456,7 +456,22 @@ def Goodbug():
                     sign up->email bombing
                     forget passwrod->email bombing
                     otp -> brute borce
-                    contact form -> htnlinjection , bombing ''',font=('arial',16,'bold'))
+                    contact form -> htnlinjection , bombing 
+                    rate limit is when your are able to do unlimited amount of requests
+
+
+                     if you want to bypass the rate limit :-
+                     
+                     [*] you can change some words in the request like [ password => Password 
+                                                                         password => passwords
+                                                                         singup => Singup
+                                                                         etc
+                                                                         ]
+                     [*]use null payload like [jatin@gmail.com => jatin@gmail.com%0a]
+                     [*]change the headers and select the end of the ip as payload]
+                     if the header do't work then past the header two times 
+                     X-Forwarded-For:
+                     X-Forwarded-For: 127:0:0:1''',font=('arial',16,'bold'))
                     a.pack()
                 def Passwordspraying():
                     top=Toplevel(usr2)
@@ -536,6 +551,14 @@ def Goodbug():
                     Now go to the link which you open in new tab and refress if it is still there then its a 
                     bug -> See the file after 3days''',font=('arial',16,'bold'))
                     a.pack()
+                def ssti():
+                    top=Toplevel(usr2)
+                    top.geometry("750x750")
+                    top.title("How to exploit Server side template injection ")
+                    a=Label(top,text='''Upload a profil imge->Copu image address.Then go to the account and remove the image.
+                    Now go to the link which you open in new tab and refress if it is still there then its a 
+                    bug -> See the file after 3days''',font=('arial',16,'bold'))
+                    a.pack()
                 chbt=Checkbutton(usr2,text="Responce manuplation invite usr                                  ",bg="black",fg="red",font=('arial',16,'bold'))
                 chbt.place(x=5,y=140)
                 chbt=Button(usr2,text="Help",command=resmnuinviteuser)
@@ -562,7 +585,7 @@ def Goodbug():
 
                 chbt=Checkbutton(usr2,text="No rate Limit                                                                    ",bg="black",fg="red",font=('arial',16,'bold'))
                 chbt.place(x=5,y=300)
-                chbt=Button(usr2,text="Help",command=Oauthtoaccounttakovr)
+                chbt=Button(usr2,text="Help",command=Noratelimit)
                 chbt.pack()
                 chbt.place(x=600,y=300)
                 
@@ -613,7 +636,12 @@ def Goodbug():
                 chbt=Button(usr2,text="Help",command=Insecurestorge)
                 chbt.pack()
                 chbt.place(x=600,y=620) 
-
+                
+                chbt=Checkbutton(usr2,text="server side  template injection                         ",bg="black",fg="red",font=('arial',16,'bold'))
+                chbt.place(x=700,y=140)
+                chbt=Button(usr2,text="Help",command=ssti)
+                chbt.pack()
+                chbt.place(x=1200,y=140)
                 usr2.mainloop()
 
 def recon():
@@ -675,4 +703,4 @@ chbt.place(x=5,y=200)
 chbt=Button(usr,text="Recon     ",font=('arial',16,'bold'),command=recon)
 chbt.pack()
 chbt.place(x=500,y=200)
-usr.mainloop()
+usr.mainloop()    
